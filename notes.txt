@@ -140,3 +140,30 @@ next level pass:
 
 Level13:
 ----------------
+cd ~/
+gdb /home/flag13/flag13
+(gdb) set logging on
+(gdb) disas main
+Dump of assembler code for function main:
+  [ . . .]   
+  0x080484ed <+41>:	xor    %eax,%eax
+  0x080484ef <+43>:	call   0x80483c0 <getuid@plt> // call to getuit()
+  0x080484f4 <+48>:	cmp    $0x3e8,%eax  // comparison
+Quit
+(gdb) break *080484f4
+Breakpoint 1 at 0x80484f4
+(gdb) run
+Breakpoint 1, 0x080484f4 in main ()
+(gdb) p $eax
+$1 = 1014
+(gdb) set $eax=1000
+(gdb) c
+Continuing.
+Your token is b705702b-76a8-42b0-8844-3adabbe5ac58
+[Inferior 1 (process 2114) exited with code 063]
+
+next level pass: 
+
+Level14:
+----------------
+
