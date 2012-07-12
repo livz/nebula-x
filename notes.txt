@@ -120,3 +120,15 @@ next level pass: UJhv5Wds
 
 Level11:
 ----------------
+/home/level11/gen.py 
+Script to generate initial encoded buffer, 
+to be decoded into a valid command.
+
+python gen.py | TEMP=/tmp /home/flag11/flag11
+cat /home/flag11/out
+You have successfully executed getflag on a target account
+
+next level pass:
+
+Level12:
+----------------
