@@ -166,4 +166,15 @@ next level pass:
 
 Level14:
 ----------------
+$cd /home/flag14
+$./flag14 -e
+Simple encrytion with incrementing key. 
+abc -> ace and so on ...
+'Decrypt' with dec.py:
+$python dec.py `cat /home/flag14/token`
+8457c118-887c-4e40-a5a6-33a25353165
 
+next level pass: 
+
+Level15:
+----------------
