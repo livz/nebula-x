@@ -1,9 +1,7 @@
 #!/usr/bin/perl
-# Test level16 code execution of script stored in /home/level16: /*/*/MYSCRIPT
-# Will trigger code execution with:
-# ./exec.pl "`/*/*/MYSCRIPT`%00"
-# or test locally: 
-# username="`/*/*/MYSCRIPT`%00"&password=pass /home/flag16/index.cgi
+# Test level16 code execution from $username variable
+# Will execute /tmp/SCRIPT with the following username:
+# ./exec.pl "`/*/SCRIPT`%00"
 
 sub login {
 	$username = $_[0];
