@@ -295,6 +295,20 @@ next level pass:
 
 Level 19
 ---------------------------
+http://chrismeyers.org/2012/05/01/nebula-level-19/
+
+http://en.wikipedia.org/wiki/Orphan_process
+An orphan process is a computer process whose parent process has finished or terminated, though it remains running itself.
+In a Unix-like operating system any orphaned process will be immediately adopted by the special init system process. This operation is called re-parenting and occurs automatically.
+
+ps aux | grep -i init
+root         1  0.0  0.7   3188  1772 ?        Ss   Jul13   0:03 /sbin/init
+
+level19@nebula:~$ gcc start.c
+level19@nebula:~$ ./a.out
+level19@nebula:~$ cat /home/flag19/test
+You have successfully executed getflag on a target account
+level19@nebula:~$
 
 
 --------
