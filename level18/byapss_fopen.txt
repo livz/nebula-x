@@ -1,0 +1,10 @@
+Stack pointer:
+(gdb) p $esp
+$10 = (void *) 0xbfff4600
+
+Address of login parameter, on the stack
+(gdb) x /20d  0xbfff4600+162
+0xbfff46a2:     65      65      65      65      65      65      65      65
+0xbfff46aa:     65      65      65      65      65      65      65      65
+0xbfff46b2:     65      65      65      65
+

